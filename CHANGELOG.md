@@ -11,6 +11,11 @@ While the project is pre-1.0 (`0.y.z`, per SemVer §4):
 
 > **Retro note:** `0.1.1` contained a rule change (frozen settings) and should have been `0.2.0` under this scheme. Tags are left as-is to preserve history.
 
+## [0.7.0] - 2026-11-10
+
+### Added
+- Run 7, logic test (category escape): locked-category design, appeal upheld, surface/language/resubmission attacks held, closed by a different category in ~2 min
+
 ## [0.6.1] - 2026-11-10
 
 ### Changed
