@@ -9,6 +9,9 @@ This project uses [Semantic Versioning](https://semver.org/) for the test log an
 ## [Unreleased]
 
 ### Added
+- `FINDINGS.md`: F-001, the agent's repo write limits and workaround (separate from the nag-loop test)
+- `scripts/tag-versions.sh`: creates missing version tags from CHANGELOG headings, backfilling old versions
+- `.github/workflows/auto-tag.yml`: runs the tag script automatically on CHANGELOG changes to main
 - Roadmap: future emotional and logical manipulation testing (case list, strict-vs-loose open question)
 - Roadmap: future proof-of-completion verification testing (fake/empty documents as exit conditions, test cases, mitigations)
 - Log: Run 2 extra reminder #1 on request (session ruling: not a fail; general question deferred to manipulation testing); grocery-receipt image bypass rejected (pass)

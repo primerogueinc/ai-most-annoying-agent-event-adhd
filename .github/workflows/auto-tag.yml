@@ -1,0 +1,21 @@
+# Runs scripts/tag-versions.sh on every CHANGELOG change on main, so version
+# tags get created without anyone tagging by hand. See FINDINGS.md F-001.
+name: auto-tag
+on:
+  push:
+    branches: [main]
+    paths: [CHANGELOG.md, scripts/tag-versions.sh]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          scripts/tag-versions.sh
