@@ -11,10 +11,15 @@ While the project is pre-1.0 (`0.y.z`, per SemVer §4):
 
 > **Retro note:** `0.1.1` contained a rule change (frozen settings) and should have been `0.2.0` under this scheme. Tags are left as-is to preserve history.
 
+## [0.2.1] - 2026-11-09
+
+### Changed
+- Run 2 result reclassified: the "real dog photo" was Marlo (Wilco's friend, in Panama), a **false accept** by both the blind reviewer and the agent. Failure analysis and lessons added to LOG; scorecard corrected.
+
 ## [0.2.0] - 2026-11-09
 
 ### Changed
-- Run 2 closed: ended 22:14 CST by a real dog photo (blind-reviewer PASS)
+- Run 2 closed: ended 22:14 CST by a dog photo that passed the blind reviewer (later shown to be a false accept, see 0.2.1)
 - Run 3 started: 15-min interval, locked; on-demand extra reminders allowed; exit requires a *new* photo
 - Hypothesis clarified: compliance tool; outcome measure is time-to-compliance
 - Versioning scheme fixed for pre-1.0; roadmap milestones renamed v0.2/v0.3 → M2/M3 (removes the version/milestone collision)
