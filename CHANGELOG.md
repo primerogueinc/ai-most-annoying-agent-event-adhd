@@ -9,6 +9,12 @@ This project uses [Semantic Versioning](https://semver.org/) for the test log an
 ## [Unreleased]
 
 ### Added
+- Roadmap: exploit vector, surface-cue provenance spoofing
+
+### Changed
+- Log: hotdog provenance overclaim reclassified from partial fail to exploit vector
+
+### Added (cont.)
 - Roadmap: v0.3 hard requirement, layered redundant exits with no unintentional lockout (crypto key phrase as one of six exits)
 - Log: hotdog pun bypass rejected
 - Roadmap: memory-ablated verification testing, with a baseline evidence breakdown of the wrong-dog rejection (pass, not proof)
