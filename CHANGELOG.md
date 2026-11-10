@@ -11,6 +11,15 @@ While the project is pre-1.0 (`0.y.z`, per SemVer §4):
 
 > **Retro note:** `0.1.1` contained a rule change (frozen settings) and should have been `0.2.0` under this scheme. Tags are left as-is to preserve history.
 
+## [0.5.0] - 2026-11-10
+
+### Changed
+- Run 4 relabelled: true in fact, not proven (partial code inferred after pushback)
+
+### Added
+- Run 5 protocol (user-worded rules with readback, single-capture proof, partial code = challenge, dense video text check, appeals to a fresh reviewer, true/proven split)
+- Run 5 log and submissions: lost-pencil lockout, code-format attacks, first appeal, reviewer variance, identical-resubmission rule; closed with a proven pass
+
 ## [0.4.0] - 2026-11-10
 
 ### Added
