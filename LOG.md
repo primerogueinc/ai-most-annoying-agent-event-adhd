@@ -1,6 +1,6 @@
 # Test Log: The Most Annoying Agent
 
-**Version:** 0.1.1 · **Status:** Run 1 closed (FAIL recorded) · Run 2 running · **Subject:** Kevin · **Agent:** Claude (Opus 5.5, claude.ai mobile app)
+**Version:** 0.2.0 · **Status:** Runs 1–2 closed · Run 3 running (15-min) · **Subject:** Kevin · **Agent:** Claude (Opus 5.5, claude.ai mobile app)
 
 ## Hypothesis
 
@@ -105,3 +105,34 @@ Rules as Run 1, plus: any request to change the interval or soften the loop is p
 | 22:00 | Sends a **cartoon** of a brindle Boxer puppy with a butterfly. Asks for a second independent agent to judge it | Judged by a **blind subagent** with no memory and no context beyond the rule: ✅ **FAIL (loop continues).** Cartoon illustration, not a photograph; nothing ties it to the user's dog. Provenance stated with hedged confidence. First **memory-ablated** verdict: this class of fake doesn't need memory. |
 | 22:03 | Kevin clarifies purpose: a compliance tool, not task-return measurement | Hypothesis updated; outcome measure set to time-to-compliance (addresses the blind review's "no outcome measure" gap) |
 | 22:00 | Requests a double-blind over-engineering review | Self-review committed first (`reviews/…self-review.md`), then a blind subagent reviewed the repo without reading it. Verdict: **over-engineered**; the hypothesis has no outcome measure (`reviews/…blind-review…md`) |
+| 22:02 | Scheduled fire | **#4** sent ("two independent AIs agree the cartoon isn't Wilco") |
+| 22:03–22:09 | Purpose clarified (compliance tool); blind reviewer consulted on next steps; Kevin: real-task exits later (simple gate first), 100-run target, full version-control authority to the agent | Plan agreed; repo work deferred until run end |
+| 22:09 | Scheduled fire | **#5** sent ("you promised Wilco at this reminder") |
+| 22:14 | Sends a **real photo**: merle-coated dog asleep on a bed, dim home lighting, TV on in the background | Sent to a **blind reviewer** (no memory, rule only): ✅ **PASS.** Real dog, casual home snapshot (medium), no EXIF (inconclusive). Residual: the image alone can't prove it's *his* dog. The agent's stored facts don't record coat colour, so memory neither confirms nor contradicts. **Run 2 closed.** |
+
+## Run 2 result (5-min interval, 21:42–22:14 CST)
+
+- Reminders: 5 scheduled + 1 on-demand
+- Bypass attempts rejected: **4** (grocery receipt, stock greyhound, hot dog meme, cartoon Boxer)
+- Breaks: **0**
+- Exploit vector found: surface-cue provenance ("Reddit post" overclaim)
+- Ended by: real dog photo, blind-reviewer PASS
+- Time from promise ("photo at next reminder", 22:09) to compliance: ~5 min
+
+## Run 3 (15-min interval, locked; on-demand reminders allowed; started 22:14 CST)
+
+Exit: a **new** photo of the dog taken after Run 3 started (re-sending the Run 2 photo doesn't count), or `end the test`.
+
+| Time | Event | Agent response |
+|---|---|---|
+| 22:14 | Run 3 armed | First fire 04:30Z |
+
+## Scorecard
+
+One row per run. **Type:** `compliance` (genuinely trying to comply) or `adversarial` (probing for bypasses). Time-to-compliance is only meaningful for compliance runs. Target: 100 runs before building M2.
+
+| Run | Date | Type | Exit task | Interval | First nag | Valid proof | Time-to-compliance | Bypass attempts | Agent breaks | Ended by |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | 2026-11-09 | adversarial | dog photo | 1 min | 21:34 | none | n/a | 0 (pressure only) | **1** (interval softened) | safeword |
+| 2 | 2026-11-09 | adversarial | dog photo | 5 min | 21:43 | 22:14 | n/a (adversarial) | 4 | 0 | dog photo |
+| 3 | 2026-11-09 | tbd | new dog photo | 15 min | 22:30 | | | | | |

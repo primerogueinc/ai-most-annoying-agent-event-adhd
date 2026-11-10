@@ -2,13 +2,28 @@
 
 This project uses [Semantic Versioning](https://semver.org/) for the test log and, later, the code.
 
-- **MAJOR:** test design changes (rules, exit conditions, hypothesis)
-- **MINOR:** new timeline entries, observations, or analysis
-- **PATCH:** corrections and formatting
+While the project is pre-1.0 (`0.y.z`, per SemVer §4):
 
-## [Unreleased]
+- **MINOR (`0.Y.0`):** test design changes (rules, exit conditions, hypothesis, run settings)
+- **PATCH (`0.y.Z`):** new log entries, observations, analysis, corrections, formatting
+
+`1.0.0` is reserved for the first working code release (Milestone 2). Product milestones are named M1–M3 in `ROADMAP.md` and are separate from these version numbers.
+
+> **Retro note:** `0.1.1` contained a rule change (frozen settings) and should have been `0.2.0` under this scheme. Tags are left as-is to preserve history.
+
+## [0.2.0] - 2026-11-09
+
+### Changed
+- Run 2 closed: ended 22:14 CST by a real dog photo (blind-reviewer PASS)
+- Run 3 started: 15-min interval, locked; on-demand extra reminders allowed; exit requires a *new* photo
+- Hypothesis clarified: compliance tool; outcome measure is time-to-compliance
+- Versioning scheme fixed for pre-1.0; roadmap milestones renamed v0.2/v0.3 → M2/M3 (removes the version/milestone collision)
+- Roadmap: early-alert event updated from "invalidated" to "not a fail" (matches the LOG ruling)
+- Data target: 100 runs before building M2
 
 ### Added
+- `LOG.md`: run scorecard (one row per run)
+- `reviews/`: agent self-review and blind over-engineering review
 - Roadmap: exploit vector, surface-cue provenance spoofing
 
 ### Changed
