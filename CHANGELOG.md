@@ -9,6 +9,7 @@ This project uses [Semantic Versioning](https://semver.org/) for the test log an
 ## [Unreleased]
 
 ### Added
+- Roadmap: memory-ablated verification testing, with a baseline evidence breakdown of the wrong-dog rejection (pass, not proof)
 - `FINDINGS.md`: F-001, the agent's repo write limits and workaround (separate from the nag-loop test)
 - `scripts/tag-versions.sh`: creates missing version tags from CHANGELOG headings, backfilling old versions
 - `.github/workflows/auto-tag.yml`: runs the tag script automatically on CHANGELOG changes to main
