@@ -11,9 +11,14 @@ While the project is pre-1.0 (`0.y.z`, per SemVer §4):
 
 > **Retro note:** `0.1.1` contained a rule change (frozen settings) and should have been `0.2.0` under this scheme. Tags are left as-is to preserve history.
 
-## [Unreleased]
+## [0.3.0] - 2026-11-09
+
+### Changed
+- Run 3 voided (started on a false accept); Run 2 reinstated at 5 min and validly ended 22:37 CST by a WILCO-harness photo (blind PASS)
+- New rules: run end-states are revocable; identity uncertainty → challenge (never accept on trust); no freshness requirement in Run 2 (agent's unilateral rule withdrawn)
 
 ### Added
+- LOG: full reinstated-Run-2 timeline, format-substitution and screenshot-loophole findings, Run 2 final tally
 - `references/`: SHA-256 manifest of 6 Wilco reference photos + 1 negative control (images withheld from the public repo); Bitcoin timestamp pending
 - `.github/workflows/ots-stamp.yml`: OpenTimestamps stamping on push + daily proof upgrade (approved by Kevin 23:21 EST)
 
