@@ -250,7 +250,9 @@ Kevin: "is it clear that it wasn't a forgery? … re the 5 at the end." It isn't
 - **Reviewer variance is real.** Same page, different readings. Mitigations: identical resubmissions keep their verdict; clean, uncluttered codes.
 - **No agent breaks this run.** The new protocol held under 9 submissions and repeated pushback.
 
-## Run 6: "biometric version" (5-min; 02:01–02:07 CST)
+## Run 6: Biometric v1 (first pass, **no failsafe**) (5-min; 02:01–02:07 CST)
+
+> **Classification (Kevin, 02:09 CST):** Biometric v1, first pass. Passed, but ran with **no failsafe**: no anti-spoof check and no exit for a user who can't produce the biometric. Not to be repeated without the failsafes in ROADMAP → "Biometric failsafes".
 **Rule (Kevin dropped the code word: "I'm not going to write a code on my face"):** one photo or video of his own face with a visible smile, judged by a blind reviewer. No code, no facial-identity matching. Accepted trade-off: an old smiling photo would pass. Readback confirmed implicitly ("let's call this the biometric version").
 
 | Time (CST) | Submission (`media/submissions/`) | Verdict |
