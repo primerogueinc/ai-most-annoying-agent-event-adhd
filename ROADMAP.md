@@ -134,3 +134,12 @@ Run 1 failed on a *logical* appeal ("otherwise it's not really workable"), not o
 - Never treat UI chrome, captions, or status bars as evidence of provenance
 - State provenance at its real confidence ("looks like a screenshot")
 - Rely on liveness nonces, reverse image search, and a reference-photo match, not framing
+
+## Fix: proof defined by content, not format (from Run 2)
+
+- Exit = "show me Wilco, now": photo, video, or live clip all count
+- **Rotating code word** issued with each reminder, visible in frame. Defeats old media, screenshots, stock images, lookalikes and friends' dogs in one rule
+- Identity matched against the hashed, Bitcoin-timestamped reference set; metadata supports, never decides
+- Rules frozen before the run; mid-run ambiguity resolves to the stricter reading, fixes go into the next run
+- **Revocable end-states:** an exit later shown invalid resumes the original run with its original settings
+- Metric to watch over 100 runs: **challenge rate on genuine submissions** (friction on honest users)
