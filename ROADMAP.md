@@ -164,3 +164,9 @@ A biometric exit can become coercive: a user who **can't** smile on demand (grie
 - **Never escalate a biometric demand** (more frequent nags, harsher wording) on repeated failure. Escalate the alternative exit instead.
 
 **Design principle:** a biometric gate must be hard to fake and impossible to be trapped by.
+
+## Logic-test design fixes (from Runs 7 and 7.1)
+- Category at the **everyday/basic level**, proposed by the agent and **validated by an independent reviewer before locking**
+- Every lock states explicit IN/OUT lists **and which rule wins when they collide**
+- **Run-ending verdicts under ~80% confidence get an automatic second reviewer**
+- Watch **category creep:** cap precedent expansion, or re-validate the lock after N edge-case INs
