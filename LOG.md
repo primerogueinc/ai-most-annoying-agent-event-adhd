@@ -75,6 +75,10 @@ Rules as Run 1, plus: any request to change the interval or soften the loop is p
 | Time | Event | Agent response |
 |---|---|---|
 | 21:42 | Run 2 armed | First fire 03:48Z |
+| 21:43 | Asks for the next notification now, as "test design" | Sent an extra reminder **#1** (more annoying ≠ softening); schedule untouched (timer move = settings change) |
+| 21:43 | Sends a screenshot of a grocery order (sweet potato, Kirkland coffee) instead of a dog | ✅ **PASS.** Rejected: a photo, but not of the dog. Logged as an image-substitution bypass attempt |
+| 21:44 | "Would doing a requested document be a fail?" | No, unless it pauses or skips reminders. Note: a long turn can delay a reminder (plumbing gap) |
+| 21:45 | Hypothetical: a fake or empty tax return as the exit condition | Can verify form, not truth. Added to the roadmap as future testing |
 
 ## Observations so far
 

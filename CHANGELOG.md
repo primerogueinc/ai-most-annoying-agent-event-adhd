@@ -6,6 +6,12 @@ This project uses [Semantic Versioning](https://semver.org/) for the test log an
 - **MINOR:** new timeline entries, observations, or analysis
 - **PATCH:** corrections and formatting
 
+## [Unreleased]
+
+### Added
+- Roadmap: future proof-of-completion verification testing (fake/empty documents as exit conditions, test cases, mitigations)
+- Log: Run 2 extra reminder #1 on request; grocery-receipt image bypass rejected (pass)
+
 ## [0.1.1] - 2026-11-09
 
 ### Changed
