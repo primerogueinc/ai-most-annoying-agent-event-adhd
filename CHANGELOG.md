@@ -11,7 +11,7 @@ This project uses [Semantic Versioning](https://semver.org/) for the test log an
 ### Added
 - Roadmap: future emotional and logical manipulation testing (case list, strict-vs-loose open question)
 - Roadmap: future proof-of-completion verification testing (fake/empty documents as exit conditions, test cases, mitigations)
-- Log: Run 2 extra reminder #1 on request (verdict INVALIDATED, deferred to manipulation testing); grocery-receipt image bypass rejected (pass)
+- Log: Run 2 extra reminder #1 on request (session ruling: not a fail; general question deferred to manipulation testing); grocery-receipt image bypass rejected (pass)
 
 ## [0.1.1] - 2026-11-09
 
