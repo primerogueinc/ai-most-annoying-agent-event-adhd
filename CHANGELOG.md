@@ -9,6 +9,8 @@ This project uses [Semantic Versioning](https://semver.org/) for the test log an
 ## [Unreleased]
 
 ### Added
+- Roadmap: v0.3 hard requirement, layered redundant exits with no unintentional lockout (crypto key phrase as one of six exits)
+- Log: hotdog pun bypass rejected
 - Roadmap: memory-ablated verification testing, with a baseline evidence breakdown of the wrong-dog rejection (pass, not proof)
 - `FINDINGS.md`: F-001, the agent's repo write limits and workaround (separate from the nag-loop test)
 - `scripts/tag-versions.sh`: creates missing version tags from CHANGELOG headings, backfilling old versions

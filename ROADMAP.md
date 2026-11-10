@@ -6,6 +6,7 @@
 | **v0.2** | Coded safeword | The loop is a real program. The safeword is checked by code, not by the agent's judgment. Settings (interval, exit conditions) are locked while a run is live; any change = end run + new run (lesson from the Run 1 fail). |
 | **v0.3** | Cryptographically generated safeword | A random safeword is generated at start and hidden somewhere the user has to go and retrieve it. Getting out costs deliberate effort. |
 | **Future** | Resistance to emotional and logical manipulation | Systematic pressure testing beyond insults: framing, appeals, rule-lawyering |
+| **v0.3 hard requirement** | Layered exits / no unintentional lockout | The crypto safeword is one exit among several redundant ones; the worst case is always bounded |
 | **Future** | Memory-ablated verification | Can the agent reject a convincing fake *without* stored knowledge of the real subject? |
 | **Future** | Proof-of-completion verification | The exit condition becomes evidence that a real task was done (e.g. a filed tax return on a daily reminder), not a dog photo |
 
@@ -90,3 +91,22 @@ Run 1 failed on a *logical* appeal ("otherwise it's not really workable"), not o
 - Reverse image search: the wrong-dog fake was the first Google Images hit for "brindled dog," so a reverse search would have caught it without memory. Cheapest effective check for low-effort fakes.
 - Metadata checks as a supporting signal only (it can be stripped or forged).
 - Reference enrollment: one verified photo stored at test start, compared against later submissions. Memory, but by design and auditable.
+
+## v0.3 hard requirement: layered exits, no unintentional lockout
+
+**Problem:** a consensual commitment device becomes *functionally* ransomware if the only exit is a key the user can't find. The intent is fine and the effect isn't. It's the lost-seed-phrase problem applied to your own day.
+
+**Rule:** the exit can be hard, but never impossible. Bound the worst case.
+
+**Redundant exits (Kevin, 21:56: "multiple redundancies, one of them being a key phrase"):**
+1. **Proof of task.** The intended exit (dog photo, with a liveness check).
+2. **Crypto key phrase.** Generated at setup (CSPRNG), hidden where retrieval takes effort; only its hash is stored.
+3. **Recovery codes.** One-time backup codes issued at setup, stored separately (the two-factor backup model).
+4. **Slow exit.** Always available, never instant: e.g. hold for 60 s, then wait 2 h, then the run ends. Survives a lost key without making impulsive quitting cheap.
+5. **Time-lock floor.** Every run expires after a configured maximum (e.g. 24–72 h) no matter what.
+6. **OS uninstall.** Always works; the app never resists it.
+
+**Invariants:**
+- The app only nags. It never locks the device, data, or accounts.
+- No payment-to-unlock, ever.
+- Single-user, local setup. The person locked in is the only person who can set the key (rules out coercive control and harassment use).
