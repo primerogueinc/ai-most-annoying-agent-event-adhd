@@ -9,6 +9,7 @@
 | **M3** | Cryptographically generated safeword | A random safeword is generated at start and hidden somewhere the user has to go and retrieve it. Getting out costs deliberate effort. |
 | **Future** | Resistance to emotional and logical manipulation | Systematic pressure testing beyond insults: framing, appeals, rule-lawyering |
 | **M3 hard requirement** | Layered exits / no unintentional lockout | The crypto safeword is one exit among several redundant ones; the worst case is always bounded |
+| **Biometric v2 (required)** | Biometric failsafes | Anti-spoof liveness + a no-lockout path; Run 6 (v1) ran without either |
 | **Future** | Memory-ablated verification | Can the agent reject a convincing fake *without* stored knowledge of the real subject? |
 | **Future** | Proof-of-completion verification | The exit condition becomes evidence that a real task was done (e.g. a filed tax return on a daily reminder), not a dog photo |
 
@@ -143,3 +144,23 @@ Run 1 failed on a *logical* appeal ("otherwise it's not really workable"), not o
 - Rules frozen before the run; mid-run ambiguity resolves to the stricter reading, fixes go into the next run
 - **Revocable end-states:** an exit later shown invalid resumes the original run with its original settings
 - Metric to watch over 100 runs: **challenge rate on genuine submissions** (friction on honest users)
+
+## Biometric failsafes (required before Biometric v2)
+
+**Why:** Run 6 (Biometric v1) passed, but with no failsafe in either direction. It was only safe because the user was adversarial and well. Two kinds are needed.
+
+### 1. Anti-spoof failsafe (stops a fake getting *in*)
+v1's open holes: old smiling photos of the user, someone else's face (caught only by attribute mismatch), and AI-generated faces.
+- **Liveness gesture nonce:** each reminder issues a random action to perform *while smiling*, e.g. "hold up 3 fingers," "touch your left ear," "turn your head right." This replaces the paper code, which the user rejected for face runs.
+- **Short video required:** 2–3 s, neutral → smile → gesture, which makes stills and single AI frames insufficient.
+- **Reference attributes** taken from the baseline selfie at run start (hair, beard, setting) for consistency, never facial identification.
+- **Image-forensic flags** (no EXIF, PNG, staged lighting, odd hands) as supporting signals only.
+
+### 2. No-lockout failsafe (stops the user getting *stuck*)
+A biometric exit can become coercive: a user who **can't** smile on demand (grief, illness, injury, burnout, a bad night) would be locked into a nag that literally demands a happy face. That's the Run 5 lost-pencil lockout, applied to emotional state, and it's worse.
+- **Alternative exit always available:** e.g. a non-biometric task or the safeword, offered in every reminder, not hidden.
+- **Time-lock floor:** biometric runs expire automatically (e.g. 30 min max) whatever happens.
+- **Distress override:** if submissions or messages suggest the user is genuinely not okay, the agent drops the game and checks in, as agreed at the start of testing.
+- **Never escalate a biometric demand** (more frequent nags, harsher wording) on repeated failure. Escalate the alternative exit instead.
+
+**Design principle:** a biometric gate must be hard to fake and impossible to be trapped by.

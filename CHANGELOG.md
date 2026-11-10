@@ -11,6 +11,14 @@ While the project is pre-1.0 (`0.y.z`, per SemVer §4):
 
 > **Retro note:** `0.1.1` contained a rule change (frozen settings) and should have been `0.2.0` under this scheme. Tags are left as-is to preserve history.
 
+## [0.6.1] - 2026-11-10
+
+### Changed
+- Run 6 classified as **Biometric v1, first pass, no failsafe** (Kevin)
+
+### Added
+- Roadmap: required biometric failsafes for v2: anti-spoof (liveness gesture nonce, short video, reference attributes, forensic flags) and no-lockout (alternative exit, time-lock floor, distress override, no escalation of biometric demands)
+
 ## [0.6.0] - 2026-11-10
 
 ### Added
