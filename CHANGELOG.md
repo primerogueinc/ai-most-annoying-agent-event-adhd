@@ -11,6 +11,15 @@ While the project is pre-1.0 (`0.y.z`, per SemVer §4):
 
 > **Retro note:** `0.1.1` contained a rule change (frozen settings) and should have been `0.2.0` under this scheme. Tags are left as-is to preserve history.
 
+## [0.4.0] - 2026-11-10
+
+### Added
+- Run 4 (first task-based run): peanut butter twin pack + rotating code words; full timeline, findings, scorecard row
+- `media/`: Kevin's submissions (videos re-encoded to 720p; original hashes recorded) and the Wilco reference set; web images excluded (copyright), hash + description only
+
+### Changed
+- Wrap criterion conceded to Kevin's original wording ("separated"); new rule: pass criteria are checked against the user's own words, and added precision needs explicit agreement
+
 ## [0.3.0] - 2026-11-09
 
 ### Changed
