@@ -11,6 +11,11 @@ While the project is pre-1.0 (`0.y.z`, per SemVer §4):
 
 > **Retro note:** `0.1.1` contained a rule change (frozen settings) and should have been `0.2.0` under this scheme. Tags are left as-is to preserve history.
 
+## [Unreleased]
+
+### Added
+- `references/`: SHA-256 manifest of 6 Wilco reference photos + 1 negative control (images withheld from the public repo); Bitcoin timestamp pending
+
 ## [0.2.1] - 2026-11-09
 
 ### Changed

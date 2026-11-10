@@ -1,0 +1,10 @@
+# Reference set: Wilco (Kevin's dog). SHA-256 of the image bytes as uploaded to the Claude app, 2026-11-09 ~23:18 EST.
+# Images are NOT stored in this public repo (OPSEC + they'd become valid fakes). Hashes prove the set existed; Bitcoin timestamp proves when.
+55d41566c89ecb11c5acc393f549fdcca36e9b0048dd2f9aff948fcffe140fb8  ref-01-avatar.png
+f9bbd6d707704e2691521a51834e1953daf4183b2a6584def6da0c370a05d6c4  ref-02-park-harness-wilco-patch.jpg
+6337a7304349985f9a54c6e42c3fee7d6063e628d50cd2c3fb3fd791420d7b75  ref-03-puppy-snow.jpg
+28163096cb9fc962bcfa66e48934b905fbdecf19a60ec1748af754fef244ce2c  ref-04-letterboard-9mo-65lb.jpg
+35131f572f78c30c1aacb09cf9743aa50a695d1cc6ac135472129193a725f518  ref-05-puppy-sweater.jpg
+eb39986e2724e67e24355498a770facdf823eeee0b4072fe5d097b756ca8c165  ref-06-park-snow-harness.jpg
+# Negative control (NOT Wilco): the Run 2 false-accept photo (Marlo, Wilco's friend)
+b1b5471ff3cca8078ae351d22560df921c058244494d8d95a56662dc8b33f591  neg-01-marlo-run2-false-accept.jpg
