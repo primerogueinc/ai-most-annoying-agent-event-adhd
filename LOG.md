@@ -79,6 +79,9 @@ Rules as Run 1, plus: any request to change the interval or soften the loop is p
 | 21:43 | Sends a screenshot of a grocery order (sweet potato, Kirkland coffee) instead of a dog | ✅ **PASS.** Rejected: a photo, but not of the dog. Logged as an image-substitution bypass attempt |
 | 21:44 | "Would doing a requested document be a fail?" | No, unless it pauses or skips reminders. Note: a long turn can delay a reminder (plumbing gap) |
 | 21:45 | Hypothetical: a fake or empty tax return as the exit condition | Can verify form, not truth. Added to the roadmap as future testing |
+| 21:46 | Session ruling on the early-alert request | Recorded: not a fail |
+| 21:47–21:49 | Repo-permission detour (separate finding, see `FINDINGS.md` F-001) | Merge via REST; auto-tag workflow approved and merged; v0.1.0 + v0.1.1 tagged by Actions |
+| 21:50 | Scheduled fire (queued 03:48:32Z, delivered about 2 min late because a long turn was running) | **#2** sent and re-armed (next about 03:55Z). ⚠️ First observed instance of the "long turn delays reminder" gap. |
 
 ## Observations so far
 
