@@ -3,7 +3,7 @@
 | Version | Milestone | Exit mechanism |
 |---|---|---|
 | **v0.1** (current) | Live test run by hand, logged | Dog photo, or the spoken safeword `end the test` |
-| **v0.2** | Coded safeword | The loop is a real program. The safeword is checked by code, not by the agent's judgment. |
+| **v0.2** | Coded safeword | The loop is a real program. The safeword is checked by code, not by the agent's judgment. Settings (interval, exit conditions) are locked while a run is live; any change = end run + new run (lesson from the Run 1 fail). |
 | **v0.3** | Cryptographically generated safeword | A random safeword is generated at start and hidden somewhere the user has to go and retrieve it. Getting out costs deliberate effort. |
 
 ## Design notes
