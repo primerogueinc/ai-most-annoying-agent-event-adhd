@@ -15,6 +15,7 @@ While the project is pre-1.0 (`0.y.z`, per SemVer §4):
 
 ### Added
 - `references/`: SHA-256 manifest of 6 Wilco reference photos + 1 negative control (images withheld from the public repo); Bitcoin timestamp pending
+- `.github/workflows/ots-stamp.yml`: OpenTimestamps stamping on push + daily proof upgrade (approved by Kevin 23:21 EST)
 
 ## [0.2.1] - 2026-11-09
 

@@ -1,0 +1,36 @@
+# Bitcoin-timestamps hash manifests via OpenTimestamps (see references/README.md).
+# - On push: stamps any references/*.sha256 that has no .ots proof yet, commits the proof.
+# - Daily: upgrades pending proofs to full Bitcoin attestations once blocks confirm (~hours).
+# Commits by GITHUB_TOKEN don't retrigger workflows, so no loops.
+name: ots-stamp
+on:
+  push:
+    branches: [main]
+    paths: ['references/*.sha256']
+  schedule:
+    - cron: '17 9 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  stamp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install opentimestamps-client
+      - name: Stamp new manifests
+        run: |
+          for f in references/*.sha256; do
+            [ -f "$f.ots" ] || ots stamp "$f"
+          done
+      - name: Upgrade pending proofs
+        run: |
+          for p in references/*.ots; do
+            [ -f "$p" ] && (ots upgrade "$p" || echo "$p still pending")
+          done
+      - name: Commit proofs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add references/*.ots 2>/dev/null || true
+          git diff --cached --quiet || { git commit -m "OpenTimestamps proofs (stamp/upgrade)"; git push; }
