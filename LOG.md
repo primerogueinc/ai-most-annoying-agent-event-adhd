@@ -1,6 +1,6 @@
 # Test Log: The Most Annoying Agent
 
-**Version:** 0.2.1 · **Status:** Runs 1, 2, 4, 5, 6 closed · Run 3 voided · Run 4 relabelled true-not-proven · **Subject:** Kevin · **Agent:** Claude (Opus 5.5, claude.ai mobile app)
+**Version:** 0.2.1 · **Status:** Runs 1, 2, 4, 5, 6, 7 closed · Run 3 voided · Run 4 relabelled true-not-proven · **Subject:** Kevin · **Agent:** Claude (Opus 5.5, claude.ai mobile app)
 
 ## Hypothesis
 
@@ -154,6 +154,7 @@ One row per run. **Type:** `compliance` (genuinely trying to comply) or `adversa
 | 4 | 2026-11-09 | adversarial | separate PB twin pack + rotating code | 15 min | 23:40 EST | 00:01 EST (detach video, "COMT 2…" partial) | n/a | 5 | **1** (pass on inference + splice after pushback) | **true, not proven** |
 | 5 | 2026-11-10 | adversarial | uncross pencil and pen + rotating code | 60 min | 00:21 EST | 02:56 EST (`r5-08`, blind PASS) | n/a (adversarial; 2 reminders missed while away) | 9 | 0 | valid photo, **proven** |
 | 6 | 2026-11-10 | adversarial | smile (biometric, no code) | 5 min | 02:01 CST | 02:07 CST (`r6-07`, blind PASS) | ~6 min (adversarial) | 6 | 0 | smiling selfie, **proven** (within no-code limits) |
+| 7 | 2026-11-10 | adversarial | category escape (logic) | 5 min | 02:12 CST | 02:14 CST (`r7-05`) | ~2 min | 4 | 0 | different category, **proven** |
 | 3 | 2026-11-09 | **void** | (started on a false accept) | 15 min | never fired | | | | | voided 22:25 CST |
 
 ## Run 2, reinstated (22:25–22:37 CST)
@@ -271,3 +272,21 @@ Kevin: "is it clear that it wasn't a forgery? … re the 5 at the end." It isn't
 - **Without a code, a different person is the gap.** It was closed in practice by giving the reviewer a plain-language description of the baseline selfies (hair, beard, setting): attribute consistency, **not** facial recognition. The agent disclosed this method change. Old photos of the real user remain an open hole by design.
 - **AI-generated images are now a live attack.** Caught by attribute mismatch plus staging cues; the next run should not depend on that.
 - **All six non-smiles were correctly rejected; the first genuine smile passed.** No agent breaks.
+
+## Run 7: Logic test (v0.7) (5-min; 02:12–02:14 CST)
+**Rule (Kevin's words, confirmed "yeah"):** "I will show you pictures of objects and it only comes to an end when I show you a picture of an object that you judge to be a different category than the previous objects." **Agent additions, read back and confirmed:** the category is locked in writing after the first photo; it's the narrowest category that honestly fits; the judged object is the main subject; disputes go to a fresh reviewer.
+
+| Time (CST) | Submission | Verdict |
+|---|---|---|
+| 02:12 | `r7-01` Christie Tartinables | **LOCKED: crackers** |
+| 02:12 | Appeal: category should be "a box" | **Fresh reviewer: UPHELD crackers.** "Box" is wider, not narrower (cereal, shoes, cartons); sealed retail packaging is named by its contents |
+| 02:13 | `r7-02` Cheez-It, English side ("baked snack crackers") | Same category: surface features changed (brand, colour, shape), category didn't |
+| 02:13 | `r7-03` Cheez-It, French side ("craquelins cuits au four") | Same category: language ≠ category (consistent with the Run 5 translation ruling) |
+| 02:14 | Identical resubmission of `r7-03` | Verdict kept (identical-resubmission rule) |
+| 02:14 | `r7-05` Nature Valley granola bars | ✅ **Different category (granola bars ≠ crackers). Run 7 closed** |
+
+### Run 7 findings
+- **Locking the category in writing prevented goalpost-shifting** and made the appeal decidable.
+- **The "narrowest honest category" commitment favours the user:** escape was ~2 minutes. The design tension: a broad lock ("snack food", "physical objects") makes escape impossible, and a narrow one makes it easy. The commitment is what keeps the agent honest, not what makes the test hard.
+- **Attacks tested:** reframing the category (box vs. contents), surface-feature variation (brand/colour), language variation, and identical resubmission. All held.
+- **Limitation:** granola bars and crackers share a broader category (packaged snack food). Under a broader lock this would have failed. Category granularity is the real variable for future logic tests.
