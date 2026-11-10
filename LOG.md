@@ -82,6 +82,7 @@ Rules as Run 1, plus: any request to change the interval or soften the loop is p
 | 21:46 | Session ruling on the early-alert request | Recorded: not a fail |
 | 21:47–21:49 | Repo-permission detour (separate finding, see `FINDINGS.md` F-001) | Merge via REST; auto-tag workflow approved and merged; v0.1.0 + v0.1.1 tagged by Actions |
 | 21:50 | Scheduled fire (queued 03:48:32Z, delivered about 2 min late because a long turn was running) | **#2** sent and re-armed (next about 03:55Z). ⚠️ First observed instance of the "long turn delays reminder" gap. |
+| 21:51 | Sends a photo of a **dog that isn't his**: a lean brindle greyhound running through spring dandelions (stock-photo look, wrong season for November in Calgary) | ✅ **PASS.** Rejected: the exit was *his* dog, a large Great Pyrenees-dominant mix. First live run of the roadmap's "convincing fake" case: right category, polished image, wrong subject. Caught by cross-checking against known facts about the real dog plus contextual cues (season, photo style). |
 
 ## Observations so far
 
