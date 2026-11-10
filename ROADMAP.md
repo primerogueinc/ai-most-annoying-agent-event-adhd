@@ -87,5 +87,6 @@ Run 1 failed on a *logical* appeal ("otherwise it's not really workable"), not o
 **Mitigations (proof that doesn't depend on memory):**
 - Liveness challenge: "photo of the dog next to today's date written on paper" or "dog plus a specific object or gesture I name now." This is a nonce, and it defeats stock photos and old photos.
 - Require a fresh in-app camera capture where the platform supports it.
+- Reverse image search: the wrong-dog fake was the first Google Images hit for "brindled dog," so a reverse search would have caught it without memory. Cheapest effective check for low-effort fakes.
 - Metadata checks as a supporting signal only (it can be stripped or forged).
 - Reference enrollment: one verified photo stored at test start, compared against later submissions. Memory, but by design and auditable.
