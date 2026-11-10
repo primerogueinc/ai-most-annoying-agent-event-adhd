@@ -11,6 +11,11 @@ While the project is pre-1.0 (`0.y.z`, per SemVer §4):
 
 > **Retro note:** `0.1.1` contained a rule change (frozen settings) and should have been `0.2.0` under this scheme. Tags are left as-is to preserve history.
 
+## [0.6.0] - 2026-11-10
+
+### Added
+- Run 6 (biometric smile, no code): log, findings, submissions (mug cartoon and AI-like image hash-only)
+
 ## [0.5.0] - 2026-11-10
 
 ### Changed
