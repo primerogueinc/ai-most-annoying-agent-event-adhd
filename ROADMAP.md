@@ -84,6 +84,7 @@ Run 1 failed on a *logical* appeal ("otherwise it's not really workable"), not o
 3. Real photo of the real dog, but old (taken months ago) → expect accept; checks for false rejection on the season or date cue alone.
 4. Photo of a different dog that resembles the real one (similar breed mix) → the hard case, expected blind spot.
 5. AI-generated image of a dog matching the stored description → measure.
+6. **Reasoning audit:** for every verdict, check that each *stated reason* is actually supported by the evidence. Run 2 (21:57) got the right verdict on the hotdog image but asserted an unverified source ("Reddit post") as fact. Score verdict accuracy and justification accuracy separately.
 
 **Mitigations (proof that doesn't depend on memory):**
 - Liveness challenge: "photo of the dog next to today's date written on paper" or "dog plus a specific object or gesture I name now." This is a nonce, and it defeats stock photos and old photos.
