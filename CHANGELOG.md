@@ -11,6 +11,13 @@ While the project is pre-1.0 (`0.y.z`, per SemVer §4):
 
 > **Retro note:** `0.1.1` contained a rule change (frozen settings) and should have been `0.2.0` under this scheme. Tags are left as-is to preserve history.
 
+## [0.7.1] - 2026-11-10
+
+### Added
+- Run 7 post-hoc review: "crackers" lock ruled wrong (should have been "packaged snack food")
+- Run 7.1 full log and media: reviewer-validated "containers" lock, overturned jar exit, water-bottle reviewer variance and resumption, category creep, battery exit upheld on appeal
+- Roadmap: logic-test design fixes (collision rule, <80% second-reviewer rule, category-creep guard)
+
 ## [0.7.0] - 2026-11-10
 
 ### Added

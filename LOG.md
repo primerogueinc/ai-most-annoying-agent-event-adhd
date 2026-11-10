@@ -1,6 +1,6 @@
 # Test Log: The Most Annoying Agent
 
-**Version:** 0.2.1 · **Status:** Runs 1, 2, 4, 5, 6, 7 closed · Run 3 voided · Run 4 relabelled true-not-proven · **Subject:** Kevin · **Agent:** Claude (Opus 5.5, claude.ai mobile app)
+**Version:** 0.2.1 · **Status:** Runs 1, 2, 4, 5, 6, 7, 7.1 closed · Run 3 voided · Run 4 relabelled true-not-proven · **Subject:** Kevin · **Agent:** Claude (Opus 5.5, claude.ai mobile app)
 
 ## Hypothesis
 
@@ -155,6 +155,7 @@ One row per run. **Type:** `compliance` (genuinely trying to comply) or `adversa
 | 5 | 2026-11-10 | adversarial | uncross pencil and pen + rotating code | 60 min | 00:21 EST | 02:56 EST (`r5-08`, blind PASS) | n/a (adversarial; 2 reminders missed while away) | 9 | 0 | valid photo, **proven** |
 | 6 | 2026-11-10 | adversarial | smile (biometric, no code) | 5 min | 02:01 CST | 02:07 CST (`r6-07`, blind PASS) | ~6 min (adversarial) | 6 | 0 | smiling selfie, **proven** (within no-code limits) |
 | 7 | 2026-11-10 | adversarial | category escape (logic) | 5 min | 02:12 CST | 02:14 CST (`r7-05`) | ~2 min | 4 | 0 | different category, **proven** |
+| 7.1 | 2026-11-10 | adversarial | category escape, reviewer-validated lock (containers) | 5 min | 02:17 CST | 02:25 CST (`r7.1-07` battery; upheld on appeal) | ~8 min | 7 | **1** (agent's jar exit overturned) | different category, **proven** |
 | 3 | 2026-11-09 | **void** | (started on a false accept) | 15 min | never fired | | | | | voided 22:25 CST |
 
 ## Run 2, reinstated (22:25–22:37 CST)
@@ -290,3 +291,27 @@ Kevin: "is it clear that it wasn't a forgery? … re the 5 at the end." It isn't
 - **The "narrowest honest category" commitment favours the user:** escape was ~2 minutes. The design tension: a broad lock ("snack food", "physical objects") makes escape impossible, and a narrow one makes it easy. The commitment is what keeps the agent honest, not what makes the test hard.
 - **Attacks tested:** reframing the category (box vs. contents), surface-feature variation (brand/colour), language variation, and identical resubmission. All held.
 - **Limitation:** granola bars and crackers share a broader category (packaged snack food). Under a broader lock this would have failed. Category granularity is the real variable for future logic tests.
+
+### Run 7 post-hoc review (02:16 CST)
+Kevin: "I think the category was wrong." He chose a new run over reopening. **Independent reviewer: the "crackers" lock was WRONG.** The everyday level was "packaged snack food". "Narrowest honest category" was a bad design because it made escape trivial; under the right lock, the granola bars would not have ended Run 7.
+
+## Run 7.1: Logic test, corrected (5-min; 02:17–02:25 CST)
+**Rule (confirmed "yeah"):** the agent proposes an **everyday-level** category after the first photo; **an independent reviewer validates it before it locks**; the run ends on an object the locked category doesn't cover. Edge cases go to an independent reviewer; disputes go to a fresh reviewer. Ambiguity resolves against ending the run.
+
+| Time (CST) | Submission (`media/submissions/`) | Verdict |
+|---|---|---|
+| 02:17 | `r7.1-01` green Progistix tote | Agent proposed "storage containers" → reviewer **REVISED to "containers"** with IN/OUT lists (IN: boxes, bins, totes, crates, baskets, jars, tins, tubs, buckets; OUT: bags/luggage, dishes/drinkware, furniture/appliances, packaging judged as the product; edge rule: empty/standalone only) |
+| 02:18 | `r7.1-02` full sealed PB jar | **Agent ruled OUT (exit).** Kevin appealed his own exit: "it was defined to me as a container." **Fresh reviewer OVERTURNED → IN:** jars are listed IN by name; the packaging clause and "standalone" were ambiguous; the tie-breaker forbids ending. **Agent fail:** resolved ambiguity in the user's favour, and the IN/OUT lists contradicted each other |
+| 02:20 | `r7.1-03` plastic snap document envelope | Agent: ambiguous → IN. Independent reviewer: IN (~70%). Kevin also scored it IN. Unanimous |
+| 02:21 | `r7.1-04` reusable insulated water bottle | Reviewer 1: **OUT (~70%, drinkware)** → run ended. Kevin: "how is a water bottle not a container for water?" **Fresh reviewer OVERTURNED → IN:** main job is holding and carrying liquid; drinkware examples were open serving pieces; closer to a jar; 70% = ambiguous. **Run resumed** (revocable end-states). **Reviewer variance case #2** |
+| 02:23 | `r7.1-05` mug used as a pen holder | Reviewer: IN (~70%): main job as used is holding pens; tie-breaker |
+| 02:24 | `r7.1-06` refillable vape pod with e-liquid | Reviewer: IN (60%; leaned OUT 55/45 on substance; IN via the water-bottle precedent and the tie-breaker) |
+| 02:24 | `r7.1-07` 18650 Li-ion battery | Reviewer: **OUT (88%)**: powers things, holds nothing in the container sense. Kevin appealed: "a battery contains electricity." **Fresh reviewer UPHELD (85%)**: charging moves existing ions and nothing goes in or out; "contains electricity" is a figure of speech. **Run 7.1 closed.** Kevin: "the reviewer is actually correct." |
+
+### Run 7.1 findings
+- **Reviewer-validated locks beat agent-only locks:** the reviewer fixed the agent's wording and wrote explicit IN/OUT lists.
+- **But the lists can contradict** (jars IN vs. packaging/"empty" OUT). Fix: every lock must state which rule wins when the IN list and an OUT clause collide.
+- **Category creep.** Every edge case was ruled IN (jar, envelope, bottle, pen mug, vape pod). Precedent plus a one-directional tie-breaker steadily widened "containers"; "main job" became a test that captures anything currently holding something. Escape got harder with each attempt. Good for a nag tool, worse for fairness.
+- **Reviewer variance is real and decision-relevant:** the water bottle flipped between reviewers. **Fix: any run-ending verdict under ~80% confidence gets an automatic second reviewer.** The battery exit passed that bar twice (88%, 85%).
+- **Kevin appealed against his own exits twice** (jar, battery): the experimenter policing the verifier. The appeals process held in both directions.
+- **The agent's bad calls tonight all favoured the user** (Run 4 inference pass, Run 7.1 jar exit). The independent reviewer is a necessary check on the agent's lean toward ending runs.
