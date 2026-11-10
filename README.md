@@ -5,6 +5,7 @@ A live test of whether an AI agent can act as an in-loop brake for ADHD task-swi
 
 - [`LOG.md`](LOG.md): hypothesis, rules, implementation, timeline, running tally
 - [`CHANGELOG.md`](CHANGELOG.md): versioned history (SemVer)
+- [`ROADMAP.md`](ROADMAP.md): v0.2 coded safeword → v0.3 crypto safeword
 
 **Phase 1 (current):** the live test, logged by hand.
 **Phase 2 (after Kevin calls it):** code it up.

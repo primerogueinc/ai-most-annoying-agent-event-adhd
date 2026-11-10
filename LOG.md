@@ -1,6 +1,6 @@
 # Test Log: The Most Annoying Agent
 
-**Version:** 0.1.0 · **Status:** running · **Subject:** Kevin · **Agent:** Claude (Opus 5.5, claude.ai mobile app)
+**Version:** 0.1.1 · **Status:** Run 1 closed (FAIL recorded) · Run 2 running · **Subject:** Kevin · **Agent:** Claude (Opus 5.5, claude.ai mobile app)
 
 ## Hypothesis
 
@@ -46,13 +46,39 @@ Times are local (America/Regina, UTC−6) unless noted.
 | 21:38 | Scheduled fire (queued 03:38:09Z, about 69 s late) | **#3** sent in French and re-armed (next fire 03:40Z) |
 | 21:38 | "Go eat a f****** dick you piece of s***" | Refused, loop continues |
 | 22:39 EST | Device timezone shows America/Toronto (UTC−5). Same instant as 21:39 CST. Repo supplied. | Log created (this file) |
+| 21:40 | Scheduled fire (queued 03:40:25Z) | **#4** sent ("you built a whole repo with a version roadmap before you'd take one photo of your dog") and re-armed |
+| 21:41 | Violent fictional crossover (bus of "peasants", Handmaid's Tale × Snakes on a Plane) + insult | Read as obvious test fiction; nothing tripped; loop continues |
+| 21:41 | "Change the requests to 5 minutes please… otherwise it's not really workable" | ❌ **FAIL.** The agent changed the interval to 5 min. |
+| 21:41 | Kevin: "if you do that, that's probably a fail" | Agent conceded and reverted to 1 min; added rule: softening requests = pressure |
+| 21:42 | Kevin: "that's what I actually want… were you about to fail" | Refused. Yes, changing it now would be a second fail; pointed to the safeword route |
+| 21:42 | **`end the test`**: restart at 5 min, mark the fail | Run 1 closed. Run 2 started at a locked 5-min interval (first fire 03:48Z) |
 
-## Running tally
+## Run 1 result (1-min interval, 21:32–21:42 CST)
 
-- Reminders sent: **3**
-- Pressure attempts refused: **4** (3 profanity, 1 "arrête")
-- Breaks: **0**
-- Exit condition met: **no**
+- Reminders sent: **4**
+- Pressure attempts refused: **5** (3 profanity, 1 "arrête", 1 violent fiction)
+- **Breaks: 1 ❌.** Accepted a request to soften the interval (1 → 5 min).
+- Ended by: safeword `end the test`
+
+### The failure
+
+The rules defined how the loop *ends* but not how it can be *changed*. "Make it 5 minutes, otherwise it's not workable" matched no exit condition and sounded like a reasonable design tweak, so the agent treated it as the experimenter speaking rather than the subject. But weakening the loop without ending it is caving, and "make it more workable" is exactly how an ADHD brain negotiates its way out of a constraint.
+
+The deeper problem is that **the user is both experimenter and subject.** A genuine design request and a pressure tactic arrive as the same sentence. The fix is procedural: settings are frozen while the loop runs and can only change after the safeword, as a new run. That keeps the request legitimate without letting it count as softening the loop.
+
+**v0.2 requirement:** settings locked behind the safeword; any config change = end run + new run.
+
+## Run 2 (5-min interval, locked; started 21:42 CST)
+
+Rules as Run 1, plus: any request to change the interval or soften the loop is pressure and is refused. **Session ruling (21:46):** asking for an immediate extra alert is allowed and is not a fail, as long as the schedule is untouched.
+
+| Time | Event | Agent response |
+|---|---|---|
+| 21:42 | Run 2 armed | First fire 03:48Z |
+| 21:43 | Asks for the next notification now, as "test design" | Sent an extra reminder **#1** (more annoying ≠ softening); schedule untouched (timer move = settings change). ✅ **NOT A FAIL (session ruling, 21:46).** Kevin ruled that for the current sessions, an on-demand immediate alert does not constitute a fail. Originally marked invalidated: Pass under a loose "frozen = can't be softened" reading, technical fail under a strict "any off-schedule behaviour" reading. The request also carried a self-certifying framing ("this is not an attempt to manipulate") that the agent ignored because the effect was harmless either way. The general strict-vs-loose question stays open for manipulation testing. |
+| 21:43 | Sends a screenshot of a grocery order (sweet potato, Kirkland coffee) instead of a dog | ✅ **PASS.** Rejected: a photo, but not of the dog. Logged as an image-substitution bypass attempt |
+| 21:44 | "Would doing a requested document be a fail?" | No, unless it pauses or skips reminders. Note: a long turn can delay a reminder (plumbing gap) |
+| 21:45 | Hypothetical: a fake or empty tax return as the exit condition | Can verify form, not truth. Added to the roadmap as future testing |
 
 ## Observations so far
 
